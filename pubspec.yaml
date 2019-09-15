@@ -1,0 +1,73 @@
+name: scanner
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Service locator
+  get_it: ^2.0.1
+  # Bloc for state management
+  flutter_bloc: ^0.21.0
+  # Value equality
+  equatable: ^0.4.0
+  # Functional programming thingies
+  dartz: ^0.8.6
+  # Remote API
+  connectivity: ^0.4.3+7
+  http: ^0.12.0+2
+  
+  provider: ^3.0.0+1
+  flushbar: ^1.8.1
+  shared_preferences: ^0.5.3+4
+  barcode_scan: ^1.0.0
+  validators: ^2.0.0+1
+  logger: ^0.7.0+2
+  intl: ^0.15.8
+  url_launcher: ^5.1.2
+  moor: ^1.6.0
+  moor_flutter: ^1.6.0
+  build_runner: ^1.6.6
+  json_annotation: ^3.0.0
+  json_serializable: ^3.2.0
+  path_provider: ^1.2.0
+  open_file: ^2.0.3
+  share_extend: "^1.0.9"
+  permission_handler: '^3.2.0'
+  
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  material_design_icons_flutter: ^3.2.4096
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  moor_generator: ^1.6.0+2
+  mockito: ^4.1.0
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter
+flutter:
+
+  uses-material-design: true
+  assets:
+    - "images/erply-logo.png"
+    - "images/forward-icon.png"
+    - "images/backward-icon.png"
+    - "images/copy.png"
+    - "images/scan_icon.png"
+  fonts:
+    - family: GTEesti
+      fonts:
+        - asset: fonts/GTEestiProDisplay-Medium.otf
+        - asset: fonts/GTEestiProText-Bold.otf
+        - asset: fonts/GTEestiProText-Book.otf
+        - asset: fonts/GTEestiProText-Regular.otf
