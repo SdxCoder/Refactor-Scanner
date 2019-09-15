@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:scanner/features/scan_codes/presentation/widegt_models/history_btn_widget_model.dart';
+
+import '../../../../features/scan_codes/presentation/widegt_models/history_btn_widget_model.dart';
 import '../../../../core/shared_widgets/base_widget.dart';
 
 class HistoryBtnWidget extends StatelessWidget {
