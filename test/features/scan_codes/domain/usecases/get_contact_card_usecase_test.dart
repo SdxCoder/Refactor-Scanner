@@ -5,7 +5,6 @@ import 'package:scanner/core/repository/contact_card_repository_interface.dart';
 import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
 import 'package:scanner/features/scan_codes/domain/usecase/get_contact_card_usecase.dart';
 
-import 'get_rawdata_usecase_test.dart';
 
 class MockContactCardRepository extends Mock implements IContactCardRepository {}
 
@@ -18,7 +17,7 @@ void main(){
     getContcatCardUC = GetContcatCardUC(iContactCardRepository: mockContactCardRepository);
   });
 
-  final ContactCard contactCard = ContactCard(content: [Tuple2('test1', 'test2')]);
+  final ContactCard contactCard = ContactCard(content: [Tuple('test1', 'test2')]);
 
 
   test('should return contact card' , () async{
