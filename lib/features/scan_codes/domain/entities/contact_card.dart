@@ -9,28 +9,6 @@ class ContactCard extends Equatable {
   }) : super([content]);
 
 
-
-  Map<String,dynamic> toJson(){
-     Map<String, dynamic> map = Map<String, dynamic>();
-
-     if (this.content != null) {
-      map['content'] = this.content.map((v) => v.toJson()).toList();
-    }
-
-     return map;
-  }
-
-  
-  List<Tuple> fromJson(Map<String,dynamic> map){
-    List<Tuple> list = List<Tuple>();
-    if(map['content'] != null){
-      
-      map['content'].forEach((v) => list.add(Tuple.fromJson(v)));
-    }
-
-    return list;
-  }
-
 }
 
 class Tuple extends Equatable{
