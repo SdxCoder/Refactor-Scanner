@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:scanner/features/scan_codes/data/models/contactcard_model.dart';
 import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';

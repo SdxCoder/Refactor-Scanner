@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:scanner/core/shared_widgets/app_bar.dart';
 import 'package:scanner/core/shared_widgets/base_widget.dart';
 import 'package:scanner/features/history/presentation/views/history_view.dart';
 import 'package:scanner/features/scan_codes/presentation/view_models/scan_view_model.dart';
