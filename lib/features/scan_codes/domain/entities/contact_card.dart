@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:scanner/features/scan_codes/domain/entities/scanData_interface.dart';
 
-class ContactCard extends Equatable {
+class ContactCard extends Equatable implements ScanData{
   final List<Tuple> content;
 
   ContactCard({
