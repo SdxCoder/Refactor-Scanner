@@ -15,7 +15,7 @@ class ScanView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseWidget(
-      model: ScanViewModel(bottomNavService: Provider.of(context)),
+      model: ScanViewModel(bottomNavService: Provider.of(context),getRawDataUC: Provider.of(context)),
       child: null,
       onModelReady: null,
       builder: (context, model, child){
@@ -65,7 +65,7 @@ class ScanView extends StatelessWidget {
         int index = snapshot.data;
 
         if (index == 0) {
-          return ScanResultView();
+          return ScanResultView(model: model,);
         } else {
            return HistoryView();
         }

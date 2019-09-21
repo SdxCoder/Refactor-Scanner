@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:scanner/core/shared_widgets/app_bar.dart';
 
 class ScanResultView extends StatelessWidget {
-  const ScanResultView({Key key}) : super(key: key);
+  final model;
+  const ScanResultView({Key key, this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
