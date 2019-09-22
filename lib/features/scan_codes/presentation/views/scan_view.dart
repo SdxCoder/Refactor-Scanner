@@ -17,19 +17,16 @@ class ScanView extends StatelessWidget {
     return BaseWidget(
       model: ScanViewModel(bottomNavService: Provider.of(context),getRawDataUC: Provider.of(context)),
       child: null,
-      onModelReady: null,
+      onModelReady: (model) async => await model.getData(),
       builder: (context, model, child){
         return  Scaffold(
-        bottomNavigationBar: _bottomAppBar(context),
+        bottomNavigationBar: _bottomAppBar(context, model),
         body: _pageViewStreamBuilder(context, model));
-   
       },
-    );
-
-     
+    );  
   }
 
-  Widget _bottomAppBar(BuildContext context) {
+  Widget _bottomAppBar(BuildContext context, model) {
     return BottomAppBar(
       child: Container(
         height: 95,
@@ -38,7 +35,9 @@ class ScanView extends StatelessWidget {
             InkWell(
               splashColor: Theme.of(context).splashColor,
               highlightColor: Theme.of(context).highlightColor,
-              onTap: () {},
+              onTap: () async {
+                await model.getData();
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[

@@ -1,6 +1,7 @@
 
 import 'package:provider/provider.dart';
 import 'package:scanner/core/shared_services/bottom_navigation_service.dart';
+import 'package:scanner/features/scan_codes/data/data_sources/local_data_source.dart';
 import 'package:scanner/features/scan_codes/data/data_sources/scanner_data_source.dart';
 import 'package:scanner/features/scan_codes/data/repository/scan_code_reposotory.dart';
 import 'package:scanner/features/scan_codes/domain/usecase/get_rawdata_usecae.dart';
@@ -25,6 +26,9 @@ List<SingleChildCloneableWidget> independentServices = [
     Provider.value(
       value: ScannerDataSource(),
     ),
+    Provider.value(
+      value: LocalDataSource(),
+    ),
 ];
 
 /// Create List of providers/classes/services which depend on previously registered
@@ -34,9 +38,9 @@ List<SingleChildCloneableWidget> independentServices = [
 
 List<SingleChildCloneableWidget> dependentServices = [
 
-  ProxyProvider2<ScannerDataSource, Object, ScanCodeRepostory>(
-    builder: (context, ScannerDataSource source, Object t, ScanCodeRepostory repo){
-      return ScanCodeRepostory(iScanDataScannerDataSource: source, iScanDataLocalDataSource: t);
+  ProxyProvider2<ScannerDataSource, LocalDataSource, ScanCodeRepostory>(
+    builder: (context, ScannerDataSource source, LocalDataSource localDataSource, ScanCodeRepostory repo){
+      return ScanCodeRepostory(iScanDataScannerDataSource: source, iScanDataLocalDataSource: localDataSource);
     }
   ),
 

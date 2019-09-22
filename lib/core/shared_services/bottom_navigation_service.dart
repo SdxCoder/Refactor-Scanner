@@ -13,4 +13,8 @@ class BottomNavigationService{
     _streamController.sink.add(i);
   }
 
+  void dispose(){
+    _streamController.close();
+  }
+
 }

@@ -5,6 +5,7 @@ import 'package:scanner/core/error/exceptions.dart';
 import 'package:scanner/features/scan_codes/data/data_sources/scandata_scanner_data_source_interface.dart';
 import 'package:scanner/features/scan_codes/data/models/contactcard_model.dart';
 import 'package:scanner/features/scan_codes/data/models/raw_data_model.dart';
+import 'package:scanner/features/scan_codes/data/models/scanData_factory.dart';
 
 class ScannerDataSource implements IScannerDataSource {
   @override
@@ -24,7 +25,7 @@ class ScannerDataSource implements IScannerDataSource {
         throw UnknownException();
       }
 
-    } on FormatException catch(e) {
+    } on FormatException {
       throw WrongFormatException();
     } catch(e) {
       throw UnknownException();
@@ -42,6 +43,6 @@ class ScannerDataSource implements IScannerDataSource {
   @override
   Future<RawDataModel> getRawData() async {
     String data = await scanCode();
-    return RawDataModel(data: data);
+    return scanDataFactory(data);
   }
 }
