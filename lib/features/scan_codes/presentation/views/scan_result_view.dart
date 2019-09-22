@@ -16,7 +16,7 @@ class ScanResultView extends StatelessWidget {
           context,
           () async {
            await model.getData();
-          }, // TODO : Open scan camera
+          }, 
         ),
         body: (model.result != null) ? _buildResult(context, model) :
         Text("")
@@ -100,7 +100,7 @@ class ScanResultView extends StatelessWidget {
             height: 16,
           ),
           Text(
-            model.result.toString(),
+            model.result.msg,
             style: Theme.of(context).textTheme.body1,
           ),
         ],

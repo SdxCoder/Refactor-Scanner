@@ -8,6 +8,8 @@ import 'package:scanner/features/scan_codes/data/models/raw_data_model.dart';
 import 'package:scanner/features/scan_codes/data/models/scanData_factory.dart';
 
 class ScannerDataSource implements IScannerDataSource {
+
+  
   @override
   Future<String> scanCode() async {
   
@@ -43,6 +45,27 @@ class ScannerDataSource implements IScannerDataSource {
   @override
   Future<RawDataModel> getRawData() async {
     String data = await scanCode();
+    _split();
+   
     return scanDataFactory(data);
+  }
+
+  void  _extractData(data){
+     if(data != null){
+       throw Exception();
+    }
+  }
+
+
+  void _split(){
+    List data = ['a', 'b'];
+
+    try{
+       print(data[2]);
+    } on Exception catch(e){
+      throw Exception();
+    }
+
+   
   }
 }

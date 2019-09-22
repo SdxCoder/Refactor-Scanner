@@ -49,6 +49,10 @@ class ScanCodeRepostory implements IScanCodeRepository {
       return Left(WrongFormatFailure());
     } on UnknownException  {
       return Left(UnknownFailure());
+    } on InvalidCodeException {
+      return Left(InvalidCodeFailure());
+    } on Exception {
+      return Left(UnknownFailure());
     }
   }
   
