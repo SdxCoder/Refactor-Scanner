@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 import 'package:scanner/core/error/failure_interface.dart';
 
 import 'package:scanner/core/repository/scan_code_repository_interface.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 
 class GetContcatCardUC extends Equatable {
   final IScanCodeRepository iScanCodeRepository;
@@ -14,7 +14,7 @@ class GetContcatCardUC extends Equatable {
   }) : super([iScanCodeRepository]);
 
 
-  Future<Either<IFailure, ContactCard>> getContactCard(){
+  Future<Either<IFailure, ContactQrcode>> getContactCard(){
     return iScanCodeRepository.getContactCard();
   }
 }

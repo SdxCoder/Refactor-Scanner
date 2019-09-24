@@ -1,16 +1,16 @@
 
 import 'package:meta/meta.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 
-class ContactCardModel extends ContactCard{
+class ContactQrcodeModel extends ContactQrcode{
 
-  ContactCardModel({@required List<Tuple> content}) : super(content: content);
+  ContactQrcodeModel({@required List<Tuple> content}) : super(content: content);
 
-  factory ContactCardModel.fromJson(Map<String, dynamic> json){
+  factory ContactQrcodeModel.fromJson(Map<String, dynamic> json){
     List<Tuple> list = List<Tuple>();
     json['content'].forEach((v) => list.add(Tuple.fromJson(v)));
 
-    return ContactCardModel(
+    return ContactQrcodeModel(
       content: list
     );
   }

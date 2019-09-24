@@ -2,14 +2,23 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:scanner/features/scan_codes/domain/entities/scanData_interface.dart';
 
-class ContactCard extends Equatable implements ScanData{
+
+abstract class Qrcode implements ScanData{}
+
+class ContactQrcode extends Equatable implements Qrcode{
   final List<Tuple> content;
 
-  ContactCard({
+  ContactQrcode({
     @required this.content,
   }) : super([content]);
 
 
+}
+
+class TextQrcode extends Equatable implements Qrcode{
+  final String data;
+
+  TextQrcode({@required this.data}) : super([data]);
 }
 
 class Tuple extends Equatable{

@@ -2,10 +2,10 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:scanner/features/scan_codes/domain/entities/scanData_interface.dart';
 
-class RawData extends Equatable implements ScanData {
-  final String data;
+class Barcode extends Equatable implements ScanData {
+  final String barcode;
 
-  RawData({
-    @required this.data,
-  }) : super([data]);
+  Barcode({
+    @required this.barcode,
+  }) : super([barcode]);
 }

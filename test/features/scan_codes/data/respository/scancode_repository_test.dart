@@ -9,8 +9,7 @@ import 'package:scanner/features/scan_codes/data/data_sources/scandata_scanner_d
 import 'package:scanner/features/scan_codes/data/models/contactcard_model.dart';
 import 'package:scanner/features/scan_codes/data/models/raw_data_model.dart';
 import 'package:scanner/features/scan_codes/data/repository/scan_code_reposotory.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
-
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 
 class MockScannerDataSource extends Mock implements IScannerDataSource {}
 
@@ -32,7 +31,7 @@ void main() {
   });
 
   final content = [Tuple("test", "test")];
-  final ContactCardModel contactCardModel = ContactCardModel(content: content);
+  final ContactQrcodeModel contactCardModel = ContactQrcodeModel(content: content);
 
   group('Get Contact Card', () {
     test('should return ContactCard when call to scanner data source is made',
@@ -91,7 +90,7 @@ void main() {
   });
 
     final data = "test";
-    final rawData = RawDataModel(data: data);
+    final rawData = BarcodeModel(barcode: data);
 
    group('Get Raw Data', () {
     test('should return RawData when call to scanner data source is made',

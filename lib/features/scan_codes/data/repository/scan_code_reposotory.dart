@@ -5,8 +5,8 @@ import 'package:scanner/core/error/failure_interface.dart';
 import 'package:scanner/core/repository/scan_code_repository_interface.dart';
 import 'package:scanner/features/scan_codes/data/data_sources/scandata_local_data_source_interface.dart';
 import 'package:scanner/features/scan_codes/data/data_sources/scandata_scanner_data_source_interface.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
-import 'package:scanner/features/scan_codes/domain/entities/raw_data.dart';
+import 'package:scanner/features/scan_codes/domain/entities/barcode.dart';
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 
 class ScanCodeRepostory implements IScanCodeRepository {
   final IScanDataLocalDataSource iScanDataLocalDataSource;
@@ -18,7 +18,7 @@ class ScanCodeRepostory implements IScanCodeRepository {
   });
 
   @override
-  Future<Either<IFailure, ContactCard>> getContactCard() async {
+  Future<Either<IFailure, ContactQrcode>> getContactCard() async {
 
     try {
 
@@ -36,7 +36,7 @@ class ScanCodeRepostory implements IScanCodeRepository {
   }
 
   @override
-  Future<Either<IFailure, RawData>> getRawData() async {
+  Future<Either<IFailure, Barcode>> getRawData() async {
    try {
       
       final rawData = await iScanDataScannerDataSource.getRawData();
@@ -52,7 +52,7 @@ class ScanCodeRepostory implements IScanCodeRepository {
     } on InvalidCodeException {
       return Left(InvalidCodeFailure());
     } on Exception {
-      return Left(UnknownFailure());
+      return Left(InvalidCodeFailure());
     }
   }
   

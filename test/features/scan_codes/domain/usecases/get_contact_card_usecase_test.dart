@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:scanner/core/repository/scan_code_repository_interface.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 import 'package:scanner/features/scan_codes/domain/usecase/get_contact_card_usecase.dart';
 
 
@@ -17,7 +17,7 @@ void main(){
     getContcatCardUC = GetContcatCardUC(iScanCodeRepository: mockScanCodeRepository);
   });
 
-  final ContactCard contactCard = ContactCard(content: [Tuple('test1', 'test2')]);
+  final ContactQrcode contactCard = ContactQrcode(content: [Tuple('test1', 'test2')]);
 
 
   test('should return contact card' , () async{

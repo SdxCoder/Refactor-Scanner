@@ -4,13 +4,13 @@ import 'package:scanner/features/scan_codes/data/models/raw_data_model.dart';
 
 class LocalDataSource implements IScanDataLocalDataSource{
   @override
-  Future<void> saveContactToLocalStorage(ContactCardModel contactCardModel) {
+  Future<void> saveContactToLocalStorage(ContactQrcodeModel contactCardModel) {
     // TODO: implement saveContactToLocalStorage
     return null;
   }
 
   @override
-  Future<void> saveRawToLocalStorage(RawDataModel rawDataModel) {
+  Future<void> saveRawToLocalStorage(BarcodeModel rawDataModel) {
     // TODO: implement saveRawToLocalStorage
     return null;
   }

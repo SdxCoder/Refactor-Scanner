@@ -6,7 +6,7 @@ import 'package:scanner/features/scan_codes/data/models/raw_data_model.dart';
 abstract class IScannerDataSource{
    Future<String> scanCode();
 
-   Future<ContactCardModel> getContactCard();
+   Future<ContactQrcodeModel> getContactCard();
 
-   Future<RawDataModel> getRawData();
+   Future<BarcodeModel> getRawData();
 }

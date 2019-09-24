@@ -28,9 +28,9 @@ class ScanResultView extends StatelessWidget {
       return _showError(context, model);
     }
     else if(model.result is UrlDataModel){
-      return Text(model.result.data);
+      return Text(model.result.barcode);
     }
-    else if(model.result is RawDataModel){
+    else if(model.result is BarcodeModel){
       return _showRaw(context, model);
     }
     
@@ -47,7 +47,7 @@ class ScanResultView extends StatelessWidget {
             height: 16 * 3.0,
           ),
           Text(
-            model.result.data,
+            model.result.barcode,
             style: Theme.of(context).textTheme.body1,
           ),
           SizedBox(
@@ -55,7 +55,7 @@ class ScanResultView extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Clipboard.setData(new ClipboardData(text: model.result.data))
+              Clipboard.setData(new ClipboardData(text: model.result.barcode))
                   .then((v) {
                // TODO : NotificationService.textCopied(context, model.result['raw']);
               });

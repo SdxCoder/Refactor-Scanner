@@ -2,22 +2,22 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:scanner/features/scan_codes/data/models/contactcard_model.dart';
-import 'package:scanner/features/scan_codes/domain/entities/contact_card.dart';
+import 'package:scanner/features/scan_codes/domain/entities/qrcode.dart';
 
 void main() {
-  ContactCardModel contactCardModel;
+  ContactQrcodeModel contactCardModel;
 
   setUp(() {
-    contactCardModel = ContactCardModel(content: [Tuple('test', 'test')]);
+    contactCardModel = ContactQrcodeModel(content: [Tuple('test', 'test')]);
   });
 
   test('should create ContactCardModel', () async {
-    final model = ContactCardModel(content: [Tuple('test', 'test')]);
+    final model = ContactQrcodeModel(content: [Tuple('test', 'test')]);
 
     expect(model, contactCardModel);
   });
 
-  final model2 = ContactCardModel(content: [Tuple('test', 'test'), Tuple('test', 'test')]);
+  final model2 = ContactQrcodeModel(content: [Tuple('test', 'test'), Tuple('test', 'test')]);
 
   group('to json', () {
     test('should create ContactCardModel from json string', () async {
@@ -35,7 +35,7 @@ void main() {
     });
   });
 
-  final model = ContactCardModel(
+  final model = ContactQrcodeModel(
       content: [Tuple('test', 'test'), Tuple('test1', 'test1')]);
 
   group('from json', () {
@@ -46,7 +46,7 @@ void main() {
 
       // act
       final decodedMap = json.decode(jsonString);
-      final result = ContactCardModel.fromJson(decodedMap);
+      final result = ContactQrcodeModel.fromJson(decodedMap);
 
       // assert
       expect(result, model);
